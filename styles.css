@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+  }
+
+  .body-container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat (3, auto);
+    grid-template-areas:
+      "header"
+      "nav"
+      "main";
+  }
+  
+  #header {
+    background: #134d13;
+    color:#E0DEE7;
+    text-align: center;
+    grid-area: header;
+    font-family: 'Ubuntu', sans-serif;
+    letter-spacing: 2px;
+    font-size: 25px;
+    border-top: 3px solid black;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+  }
+  
+  #contents {
+    text-align: center;
+    color: black;
+    font-size: 25px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-bottom: 3px solid black;
+    margin-top: 0; 
+  }
+  
+  #navbar {
+    grid-area: nav;
+    overflow-y: auto;
+    overflow-x: auto;
+    height: 150px;
+    background: #E0DEE7;
+    font-family: Arial, sans-serif;
+    color: #134d13;
+    font-weight: bold;
+    border: 3px solid black;
+    list-style-type: none;
+    text-align: center;
+  }
+  
+  .nav-link {
+    color: #134b13;
+    text-decoration: none;
+    border-bottom: 1px solid black;
+    display: block;
+    padding: 20px;
+    margin-left: -40px;
+    font-size: 20px;
+  }
+
+  a#nav-summary {
+    border-bottom: none;
+  }
+  
+  h3#contents {
+    background: gray;
+  }
+
+  #nav-list{
+    list-style-type: none;
+  }
+  
+  #main-doc {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(5, auto);
+    font-family: Arial, sans-serif;
+  }
+
+  .main-section {
+    padding: 15px 30px 15px 30px;
+  }
+
+  pre {
+    display: block;
+    background: #E5E7E9;
+    border-radius: 5px;
+    font-size: larger;
+    padding: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    white-space: pre-wrap;
+    word-wrap: break-word; 
+  }
+  
+  @media only screen and (min-width: 1000px){
+    
+    .body-container {
+      display: grid;
+      grid-template-columns: 25% 75%;
+      grid-template-rows: 128px 50% 50%;
+      /*previously 128px 1fr 1fr*/
+      grid-template-areas:
+        "header header"
+        "nav main"
+        "nav main";
+    }
+    
+    #navbar {
+      height: 100vh;
+      border: 3px solid black;
+      position: sticky;
+    position: -webkit-sticky;
+    /*sticky position won't work on IE, Edge 15 and earlier*/
+    top: 0;
+    }
+
+    #main-doc {
+      border-top: 3px solid black;
+    }
+  }
+  @media only screen and (max-width: 390px){
+    
+    #header-title {
+      font-size: 20px;
+    }
+    
+    #contents, .nav-link {
+      font-size: 20px;
+    }
+  }

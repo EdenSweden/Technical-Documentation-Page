@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Technical Documentation Page</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<div class=body-container>
+    <header id="header"><h1 id="header-title">HTML Accessibility</h1>
+    </header>
+    <nav id="navbar">
+      <header><h3 id="contents">Contents</h3></header>
+      <ul id="nav-list">
+        <li><a href="#What_is_HTML_Accessibility?" class="nav-link">What is HTML Accessibility?</a></li>
+        <li><a href="#Semantic_Elements" class="nav-link">Semantic Elements</a></li>
+        <li><a href="#Page_Layouts" class="nav-link">Page Layouts</a></li>
+        <li><a href="#UI_Controls" class="nav-link">UI Controls</a></li>
+        <li><a href="#Image_Accessibility" class="nav-link">Image Accessibility</a></li>
+        <li><a href="#Data_Tables" class="nav-link">Data Tables</a></li>
+        <li><a href="#Summary" class="nav-link" id="nav-summary">Summary</a></li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <!--figure out why background-color CSS for section 1 doesn't work-->
+      <section class="main-section" id="What_is_HTML_Accessibility?">
+        <header><h3>What is HTML Accessibility?</h3></header>
+        <p><b>Note: to understand this documentation, you will first need a basic knowledge of HTML and how it works.</b></p>
+        <p>Accessibility is an important principle in the modern practice of web development. Websites should be accessible to the greatest possible number of people, regardless of disabilities and methods for accessing information on the web. Special care must be taken by web developers to properly label and utilize HTML elements in their webpages. It is also important to style things properly so people with blindness and vision-related disabilities can understand and interact with a website. </p>
+      </section>
+      <section class="main-section" id="Semantic_Elements">
+        <header><h3>Semantic Elements</h3></header>
+    <p>Semantic elements are HTML tags which describe their own purpose to other technologies. Some come with special built-in styling or formatting, while others don't. However, not only can semantic tags improve your SEO, they also allow blind people who use screen reader technology to navigate pages with more ease. A page with poor semantic markup may look cool for seeing users, but it can become a real problem for vision-impaired web users since the screen reader has no signposts to go by and will just read everything on the page at once. Therefore, semantic tags should be used whenever possible.</p>
+      <p>&lt;div&gt; and &lt;span&gt; may help with some formatting, but they are not semantic. Semantic tags include:</p>
+      <ul>
+        <li>&lt;article&gt;</li>
+        <li>&lt;aside&gt;</li>
+        <li>&lt;details&gt;</li>
+        <li>&lt;figcaption&gt;</li>
+        <li>&lt;figure&gt;</li>
+        <li>&lt;footer&gt;</li>
+        <li>&lt;header&gt;</li>
+        <li>&lt;main&gt;</li>
+        <li>&lt;mark&gt;</li>
+        <li>&lt;nav&gt;</li>
+        <li>&lt;section&gt;</li>
+        <li>&lt;summary&gt;</li>
+        <li>&lt;time&gt;</li>
+        </ul>
+        <p>For a more detailed tutorial on the use of these tags, visit the W3Schools <a href="https://www.w3schools.com/html/html5_semantic_elements.asp" target="_blank">tutorial</a> on semantic elements.</p>
+        <p>The <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML/#Text_content" target="_blank">MDN</a> has shown the following example of good semantic markup:
+          <code><pre>
+  &lt;h1&gt;My heading&lt;/h1&gt;
+  
+  &lt;p&gt;This is the first section of my document.&lt;/p&gt;
+  
+  &lt;p&gt;I'll add another paragraph here too.&lt;/p&gt;
+  
+  &lt;ol&gt;
+    &lt;li&gt;Here is&lt;/li&gt;
+    &lt;li&gt;a list for&lt;/li&gt;
+    &lt;li&gt;you to read&lt;/li&gt;
+  &lt;/ol&gt;
+  
+  &lt;h2&gt;My subheading&lt;/h2&gt;
+  
+  &lt;p&gt;This is the first subsection of my document. I'd love people to be able to find this content!&lt;/p&gt;
+  
+  &lt;h2&gt;My 2nd subheading&lt;/h2&gt;
+  
+  &lt;p&gt;This is the second subsection of my content. I think is more interesting than the last one.&lt;/p&gt;
+            </pre>
+          </code>
+        </p>
+        <p>The following is an example of bad semantic markup:
+          <code><pre>
+  &lt;font size="7"&gt;My heading&lt;/font&gt;
+  &lt;br&gt;&lt;br&gt;
+  This is the first section of my document.
+  &lt;br&gt;&lt;br&gt;
+  I'll add another paragraph here too.
+  &lt;br&gt;&lt;br&gt;
+  1. Here is
+  &lt;br&gt;&lt;br&gt;
+  2. a list for
+  &lt;br&gt;&lt;br&gt;
+  3. you to read
+  &lt;br&gt;&lt;br&gt;
+  &lt;font size="5"&gt;My subheading&lt;/font&gt;
+  &lt;br&gt;&lt;br&gt;
+  This is the first subsection of my document. I'd love people to be able to find this content!
+  &lt;br&gt;&lt;br&gt;
+  &lt;font size="5"&gt;My 2nd subheading&lt;/font&gt;
+  &lt;br&gt;&lt;br&gt;
+  This is the second subsection of my content. I think is more interesting than the last one.
+          </pre></code>
+        </p>
+      </section>
+      <section class="main-section" id="Page_Layouts">
+        <header><h3>Page Layouts</h3></header>
+        <p>In earlier days of the internet, HTML tables were used as a way to organize page layouts. This practice is very unhelpful for meeting accessibility requirements, as screen readers read them in a confusing manner. Someone navigating such a website will probably have to enter the table as a separate object and start going through its cells one at a time and it won't make much sense. Now that CSS Flexbox, CSS Grids and other styling and layout options exist and have widespread browser support, it's best practice avoid using HTML tables for page layouts in general, and to only use HTML tables for what they were originally designed for: displaying data and organizing information clearly for users of all abilities. See <a href="#Data_Tables">Data Tables</a> below for more information.</p>
+        <p>MDN illustrates this as an example of a bad page layout:</p>
+        <code><pre>
+   &lt;table width="1200"&gt;
+   &lt;!-- main heading row --&gt;
+    &lt;tr id="heading"&gt;
+      &lt;td colspan="6"&gt;
+  
+      &lt;h1 align="center">Header&lt;/h1&gt;
+  
+      &lt;/td&gt;
+    &lt;/tr&gt;
+   &lt;!-- nav menu row  --&gt;
+    &lt;tr id="nav" bgcolor="#ffffff"&gt;
+      &lt;td width="200"&gt;
+         &lt;a href="#" align="center"&gt;Home&lt;/a&gt;
+      &lt;/td&gt;
+      &lt;td width="200"&gt;
+         &lt;a href="#" align="center"&gt;Our team&lt;/a&gt;
+       &lt;/td&gt;
+       &lt;td width="200"&gt;
+         &lt;a href="#" align="center"&gt;Projects&lt;/a&gt;
+       &lt;/td&gt;
+       &lt;td width="200"&gt;
+         &lt;a href="#" align="center"&gt;Contact&lt;/a&gt;
+       &lt;/td&gt;
+       &lt;td width="300"&gt;
+          &lt;form width="300"&gt;
+            &lt;input type="search" name="q" placeholder="Search query" width="300"&gt;
+          &lt;/form&gt;
+       &lt;/td&gt;
+       &lt;td width="100"&gt;
+          &lt;button width="100">Go!&lt;/button&gt;
+       &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;!-- spacer row --&gt;
+     &lt;tr id="spacer" height="10"&gt;
+       &lt;td&gt;
+       &lt;/td&gt;
+     &lt;/tr&gt;
+     &lt;!-- main content and aside row --&gt;
+     &lt;tr id="main"&gt;
+      &lt;td id="content" colspan="4" bgcolor="#ffffff"&gt;
+     &lt;!-- main content goes here --&gt;
+     &lt;/td&gt;
+      &lt;td id="aside" colspan="2" bgcolor="#ff80ff" valign="top"&gt;
+         &lt;h2>Related&lt;/h2&gt;
+     &lt;!-- aside content goes here --&gt;
+      &lt;/td&gt;
+     &lt;/tr&gt;
+     &lt;!-- spacer row --&gt;
+     &lt;tr id="spacer" height="10"&gt;
+       &lt;td&gt;
+  
+       &lt;/td&gt;
+      &lt;/tr&gt;
+     &lt;!-- footer row --&gt;
+      &lt;tr id="footer" bgcolor="#ffffff"&gt;
+       &lt;td colspan="6"&gt;
+         &lt;p&gt;©Copyright 2050 by nobody. All rights reserved.&lt;/p&gt;
+       &lt;/td&gt;
+       &lt;/tr&gt;
+     &lt;/table&gt;
+        </pre></code>
+        <p>On the other hand, MDN demonstrates this as a better, modern, more accessible page layout:</p>
+        <code><pre>
+  &lt;header&gt;
+    &lt;h1&gt;Header&lt;/h1&gt;
+  &lt;/header&gt;
+  
+  &lt;nav&gt;
+    &lt;!-- main navigation in here --&gt;
+  &lt;/nav&gt;
+  
+  &lt;!-- Here is our page's main content --&gt;
+  &lt;main&gt;
+  
+    &lt;!-- It contains an article --&gt;
+    &lt;article&gt;
+      &lt;h2&gt;Article heading&lt;/h2&gt;
+  
+      &lt;!-- article content in here --&gt;
+    &lt;/article&gt;
+  
+    &lt;aside&gt;
+      &lt;h2&gt;Related&lt;/h2&gt;
+  
+      &lt;!-- aside content in here --&gt;
+    &lt;/aside&gt;
+  
+  &lt;/main&gt;
+  
+  &lt;!-- And here is our main footer that is used across all the pages of our website --&gt;
+  
+  &lt;footer&gt;
+    &lt;!-- footer content in here --&gt;
+  &lt;/footer&gt;
+        </pre></code>
+      </section>
+      <section class="main-section" id="UI_Controls">
+        <header><h3>UI Controls</h3></header>
+        <p>UI controls refer to parts of the website such as buttons, forms, links and other controls with which the user interacts. By default, browsers allow these controls to be selected and focused on using just the keyboard, mostly using the tab key, enter key, arrow keys, etc. </p>
+        <p>In addition to properly labeling form elements using the &lt;label&gt; tag to assist screen reader technology in helping vision-impaired users navigate forms, making elements keyboard-focusable is important. It is done quite simply by using the correct HTML tags, such as in this example:</p>
+        <code><pre>
+        &lt;h1&gt;Links&lt;/h1&gt;
+  
+  &lt;p&gt;This is a link to &lt;a href="https://www.mozilla.org"&gt;Mozilla&lt;/a&gt;.&lt;/p&gt;
+  
+  &lt;p&gt;Another link, to the &lt;a href="https://developer.mozilla.org"&gt;Mozilla Developer Network&lt;/a&gt;.&lt;/p&gt;
+  
+  &lt;h2&gt;Buttons&lt;/h2&gt;
+  
+  &lt;p&gt;
+    &lt;button data-message="This is from the first button">Click me!&lt;/button&gt;
+    &lt;button data-message="This is from the second button"&gt;Click me too!&lt;/button&gt;
+    &lt;button data-message="This is from the third button"&gt;And me!&lt;/button&gt;
+  &lt;/p&gt;
+  
+  &lt;h2&gt;Form&lt;/h2&gt;
+  
+  &lt;form&gt;
+    &lt;div&gt;
+      &lt;label for="name"&gt;Fill in your name:&lt;/label&gt;
+      &lt;input type="text" id="name" name="name"&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;label for="age"&gt;Enter your age:&lt;/label&gt;
+      &lt;input type="text" id="age" name="age"&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;label for="mood"&gt;Choose your mood:&lt;/label&gt;
+      &lt;select id="mood" name="mood"&gt;
+        &lt;option>Happy&lt;/option&gt;
+        &lt;option>Sad&lt;/option&gt;
+        &lt;option>Angry&lt;/option&gt;
+        &lt;option>Worried&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+        </code></pre>
+        <p>While this is quite simple, occasionally there are still developers who don't use the proper elements. For example:</p>
+        <code><pre>
+  &lt;div data-message="This is from the first button"&gt;Click me!&lt;/div&gt;
+  &lt;div data-message="This is from the second button"&gt;Click me too!&lt;/div&gt;
+  &lt;div data-message="This is from the third button"&gt;And me!&lt;/div&gt;
+        </pre></code>
+        <p>While there are some workarounds, such as using the attribute of tabindex="0" and adding some Javascript code, these can still lead to cumbersome problems and should be avoided in the first place if at all possible. Visit <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#Building_keyboard_accessibility_back_in" target="_blank">MDN's article</a> on the topic for a more detailed explanation of how to add in keyboard accessibility.
+      </section>
+      <section class="main-section" id="Image_Accessibility">
+        <header><h3>Image Accessibility</h3></header>
+        <p>Images cannot be seen well by visually impaired people, which means it is important to use the alt attribute to assist screen readers in making them accessible. Here are two examples of code:</p>
+        <code><pre>
+  &lt;img src="dinosaur.png"&gt;
+  
+  &lt;img src="dinosaur.png" alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth."&gt;
+        </pre></code>
+        <p>The first image is not helpful at all. A screen reader will read the file name, which may provide no context at all. The second example, however, will provide the user with a much richer and more accessible experience as the screen reader will read the alternate text to them.</p>
+        <p>In cases where the image is purely for visual decoration and is not important for an accessible understanding of the site content, it is still important to use empty alt attributes so that the screen reader can respond appropriately. You can also use the aria role attribute role="presentation" so the screen reader does not read out a long, confusing file name and treats the image appropriately. 
+          <code><pre>
+  &lt;h3&gt;
+    &lt;img src="article-icon.png" alt=""&gt;
+    Tyrannosaurus Rex: the king of the dinosaurs
+  &lt;/h3&gt;
+          </pre></code>
+      </section>
+      <section class="main-section" id="Data_Tables">
+        <header><h3>Data Tables</h3></header>
+        <p>Proper elements should be used when making data tables in order to allow screen readers to provide users with information that is more easily understood and navigated. Below is an example of code for a simple data table that should be improved upon in this area:</p>
+        <code><pre>
+   &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Name&lt;/td&gt;
+      &lt;td&gt;Age&lt;/td&gt;
+      &lt;td&gt;Gender&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Gabriel&lt;/td&gt;
+      &lt;td&gt;13&lt;/td&gt;
+      &lt;td&gt;Male&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Elva&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;Female&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Freida&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;Female&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+        </pre></code>
+       <p>While this table may appear normal visually, it's not very helpful for people using a screen reader because the technology has no way of knowing how to group the rows and columns together. It's much better to be more specific and label the table properly. Some examples of how to do this are:</p>
+      <ul>
+        <li>Use &lt;th&gt;elements to label table header cells. Use the scope attribute to specify whether they are headers for rows or columns, allowing users to experience the entire group of data at once and more coherently.</li>
+        <li>Use &lt;thead&gt; to group the entire header row</li>
+        <li>Use &lt;tfoot&gt; when appropriate</li>
+        <li>Use &lt;tbody&gt; and &lt;colgroup&gt; to group rows and columns if appropriate</li>
+        <li>Use the &lt;caption&gt; element or the &lt;table&gt; summary attribute to act as an alternate text, allowing screen readers to provide a quick summary for users of what the table contains.</li>
+        </ul>
+        <p>MDN's Github page has an <a href="https://github.com/mdn/learning-area/blob/master/css/styling-boxes/styling-tables/punk-bands-complete.html" target="_blank">example</a> of better, more accessible table markup.
+      </section>
+      <section class="main-section" id="Summary">
+        <header><h3>Summary</h3></header>
+        <p>HTML accessibility is important in order for your website to reach the largest audience possible, regardless of ability or method of web access. To sum up, here are some quick tips:</p>
+        <ul>
+          <li>Use semantic elements wherever possible.</li>
+          <li>Do not use HTML tables for page layouts. Instead, use modern, responsive CSS models.</li>
+          <li>Make sure forms and UI controls are both properly labeled and keyboard-focusable.</li>
+          <li>Always add alternate text to images, even if you have to leave the alt attribute empty. Specify the image's role attribute if necessary.</li>
+          <li>Be specific when organizing data tables so that screen readers can group rows and columns together and recognize their headers. Add captions to tables as well.</li>
+        </ul>
+        <p>I claim no ownership of this information. Information for this project was taken from the Mozilla Developer Network's <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML">tutorial</a> on best accessibility practices for programmers. Some information was copied and pasted into this site solely for the purpose of practicing and demonstrating web development skills. Information on semantic elements was taken from <a href="https://www.w3schools.com/html/html5_semantic_elements.asp" target="_blank">W3Schools</a>.</p>
+      </section>
+    </main>
+  </div>
+
+
+
+
+
+
+</html>
