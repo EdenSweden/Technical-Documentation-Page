@@ -21,14 +21,13 @@
       </ul>
     </nav>
     <main id="main-doc">
-      <!--figure out why background-color CSS for section 1 doesn't work-->
       <section class="main-section" id="What_is_HTML_Accessibility?">
-        <header><h3>What is HTML Accessibility?</h3></header>
+        <h3>What is HTML Accessibility?</h3>
         <p><b>Note: to understand this documentation, you will first need a basic knowledge of HTML and how it works.</b></p>
         <p>Accessibility is an important principle in the modern practice of web development. Websites should be accessible to the greatest possible number of people, regardless of disabilities and methods for accessing information on the web. Special care must be taken by web developers to properly label and utilize HTML elements in their webpages. It is also important to style things properly so people with blindness and vision-related disabilities can understand and interact with a website. </p>
       </section>
       <section class="main-section" id="Semantic_Elements">
-        <header><h3>Semantic Elements</h3></header>
+        <h3>Semantic Elements</h3>
     <p>Semantic elements are HTML tags which describe their own purpose to other technologies. Some come with special built-in styling or formatting, while others don't. However, not only can semantic tags improve your SEO, they also allow blind people who use screen reader technology to navigate pages with more ease. A page with poor semantic markup may look cool for seeing users, but it can become a real problem for vision-impaired web users since the screen reader has no signposts to go by and will just read everything on the page at once. Therefore, semantic tags should be used whenever possible.</p>
       <p>&lt;div&gt; and &lt;span&gt; may help with some formatting, but they are not semantic. Semantic tags include:</p>
       <ul>
@@ -96,7 +95,7 @@
         </p>
       </section>
       <section class="main-section" id="Page_Layouts">
-        <header><h3>Page Layouts</h3></header>
+        <h3>Page Layouts</h3>
         <p>In earlier days of the internet, HTML tables were used as a way to organize page layouts. This practice is very unhelpful for meeting accessibility requirements, as screen readers read them in a confusing manner. Someone navigating such a website will probably have to enter the table as a separate object and start going through its cells one at a time and it won't make much sense. Now that CSS Flexbox, CSS Grids and other styling and layout options exist and have widespread browser support, it's best practice avoid using HTML tables for page layouts in general, and to only use HTML tables for what they were originally designed for: displaying data and organizing information clearly for users of all abilities. See <a href="#Data_Tables">Data Tables</a> below for more information.</p>
         <p>MDN illustrates this as an example of a bad page layout:</p>
         <code><pre>
@@ -197,7 +196,7 @@
         </pre></code>
       </section>
       <section class="main-section" id="UI_Controls">
-        <header><h3>UI Controls</h3></header>
+        <h3>UI Controls</h3>
         <p>UI controls refer to parts of the website such as buttons, forms, links and other controls with which the user interacts. By default, browsers allow these controls to be selected and focused on using just the keyboard, mostly using the tab key, enter key, arrow keys, etc. </p>
         <p>In addition to properly labeling form elements using the &lt;label&gt; tag to assist screen reader technology in helping vision-impaired users navigate forms, making elements keyboard-focusable is important. It is done quite simply by using the correct HTML tags, such as in this example:</p>
         <code><pre>
@@ -246,7 +245,7 @@
         <p>While there are some workarounds, such as using the attribute of tabindex="0" and adding some Javascript code, these can still lead to cumbersome problems and should be avoided in the first place if at all possible. Visit <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#Building_keyboard_accessibility_back_in" target="_blank">MDN's article</a> on the topic for a more detailed explanation of how to add in keyboard accessibility.
       </section>
       <section class="main-section" id="Image_Accessibility">
-        <header><h3>Image Accessibility</h3></header>
+        <h3>Image Accessibility</h3>
         <p>Images cannot be seen well by visually impaired people, which means it is important to use the alt attribute to assist screen readers in making them accessible. Here are two examples of code:</p>
         <code><pre>
   &lt;img src="dinosaur.png"&gt;
@@ -263,7 +262,7 @@
           </pre></code>
       </section>
       <section class="main-section" id="Data_Tables">
-        <header><h3>Data Tables</h3></header>
+        <h3>Data Tables</h3>
         <p>Proper elements should be used when making data tables in order to allow screen readers to provide users with information that is more easily understood and navigated. Below is an example of code for a simple data table that should be improved upon in this area:</p>
         <code><pre>
    &lt;table&gt;
@@ -300,7 +299,7 @@
         <p>MDN's Github page has an <a href="https://github.com/mdn/learning-area/blob/master/css/styling-boxes/styling-tables/punk-bands-complete.html" target="_blank">example</a> of better, more accessible table markup.
       </section>
       <section class="main-section" id="Summary">
-        <header><h3>Summary</h3></header>
+        <h3>Summary</h3>
         <p>HTML accessibility is important in order for your website to reach the largest audience possible, regardless of ability or method of web access. To sum up, here are some quick tips:</p>
         <ul>
           <li>Use semantic elements wherever possible.</li>
@@ -313,10 +312,4 @@
       </section>
     </main>
   </div>
-
-
-
-
-
-
 </html>
